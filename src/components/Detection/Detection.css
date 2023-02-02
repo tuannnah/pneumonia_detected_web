@@ -51,6 +51,11 @@
 	margin: 10px;
 	padding: 10px 20px;
 }
+.detection__uploadDetect > select {
+	margin: 10px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
 .detection__uploadDetectUpload {
 	background-color: rgb(0, 155, 59) !important;
 	color: white !important;
