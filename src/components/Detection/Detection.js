@@ -53,8 +53,8 @@ function Detection() {
       <p className="detection__help">
         <span style={{ color: "blue" }}>{t('How it works')}: </span>{t('Click the')}{" "}
         <strong style={{ color: "blue" }}>MODEL</strong> {t('to select model')},
-        {t('Click the1')}{" "}
-        <strong style={{ color: "blue" }}>UPLOAD</strong>  {t('to upload the image')}  <br/> {t('and Click the')}{" "}
+        {t('click the')}{" "}
+        <strong style={{ color: "blue" }}>UPLOAD</strong>  {t('to upload the image')}  <br/> {t('and click the')}{" "}
         <strong style={{ color: "blue" }}>DETECT</strong>{t("to get the result.")}  
       </p>
      
