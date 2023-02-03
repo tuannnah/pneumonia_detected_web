@@ -6,7 +6,7 @@
 }
 .detection > h2 {
 	margin-top: 20px;
-	padding: 20px;
+	padding: 10px;
 	color: blue;
 	font-size: 25px;
 }
@@ -17,7 +17,7 @@
 
 .detection__help{
 	padding-bottom: 30px;
-
+	text-align: center;
 }
 .detection__sampleInputs {
 	margin: 100px;
@@ -49,12 +49,40 @@
 }
 .detection__uploadDetect > button {
 	margin: 10px;
-	padding: 10px 20px;
+	padding: 10px 30px;
 }
 .detection__uploadDetect > select {
 	margin: 10px;
-	padding: 10px 20px;
+	padding: 13px 20px;
 	cursor: pointer;
+}
+.select_item{
+	margin: 10px;
+	padding: 10px;
+}
+/* .detection__select{
+	box-sizing: border-box;
+	border: none;
+	border-radius: 4px;
+	background-color: rgb(0, 155, 59) !important;
+	color: white !important;
+	font-weight: 600 !important;
+	font-size: 0.875rem;
+	letter-spacing: 0.02857em;
+	text-transform: uppercase;
+	line-height: 1.75;
+	min-width: 64px;
+    box-sizing: border-box;
+	transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms ;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+} */
+.detection__selectModel{
+	border-radius: 4px;
+	background-color: rgb(0, 155, 59) !important;
+	color: white !important;
+	font-weight: 600 !important;
+
 }
 .detection__uploadDetectUpload {
 	background-color: rgb(0, 155, 59) !important;

@@ -1,14 +1,23 @@
-// import { select } from "@material-ui/core";
+import * as React from "react";
 import { Button } from "@material-ui/core";
 import PublishIcon from "@material-ui/icons/Publish";
 import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
 import { useState } from "react";
 import "./Detection.css";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import {useTranslation} from 'react-i18next'
 
 function Detection() {
+  const {t} = useTranslation()
   const [result, setResult] = useState(null);
   const [files, setFiles] = useState(null);
+  const [age, setAge] = React.useState("");
+  
   var changeImage = (e) => {
     setResult(null);
     setFiles(e.target.files);
@@ -35,54 +44,48 @@ function Detection() {
     };
   };
 
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <div className="detection">
-      <h2>PNEUMONIA DETECTOR</h2>
+      <h2>{t('PNEUMONIA DETECTOR')}</h2>
       <p className="detection__help">
-        <span style={{ color: "blue" }}>How it works: </span>Click the{" "}
-        <strong style={{ color: "blue" }}>UPLOAD</strong> image button to upload
-        the image and Click the{" "}
-        <strong style={{ color: "blue" }}>DETECT</strong> button to get the
-        result.
+        <span style={{ color: "blue" }}>{t('How it works')}: </span>{t('Click the')}{" "}
+        <strong style={{ color: "blue" }}>MODEL</strong> {t('to select model')},
+        {t('Click the1')}{" "}
+        <strong style={{ color: "blue" }}>UPLOAD</strong>  {t('to upload the image')}  <br/> {t('and Click the')}{" "}
+        <strong style={{ color: "blue" }}>DETECT</strong>{t("to get the result.")}  
       </p>
-      {/* <div
-        style={{
-          flexDirection: "row",
-          display: "flex",
-          justifyContent: "space-around",
-          width: "50%",
-          margin: "20",
-        }}
-      > */}
-        {/* <select className="detection__uploadDetectUpload">
-          <option value="someOption">Some option</option>
-          <option value="otherOption">Other option</option>
-          <option value="otherOption">Other option</option>
-          <option value="otherOption">Other option</option>
-          <option value="otherOption">Other option</option>
-        </select> */}
-      {/* </div> */}
-      <img id="imageChoose" height={224} width={224} alt=""></img>
-      {/* <div className="detection__sampleInputs">
-				<h3>Sampleggggg Inputs</h3>
-				<div className="detection__sampleInputsImages">
-					<img src="https://www.radiologyinfo.org/gallery-items/images/chest-xray.jpg" alt="" />
-					<img
-						src="https://prod-images-static.radiopaedia.org/images/157210/332aa0c67cb2e035e372c7cb3ceca2_jumbo.jpg"
-						alt=""
-					/>
-				</div>
-			</div> */}
-
+     
+      <img id="imageChoose" height={280} width={280} alt=""></img>
       <div className="detection__uploadDetect">
         {/* upload */}
-		<select className="detection__uploadDetectUpload">
-          <option className="detection__uploadDetectUpload" value="someOption">model 1</option>
-          <option className="detection__uploadDetectUpload" value="otherOption">model 1</option>
-          <option className="detection__uploadDetectUpload" value="otherOption">model 1</option>
-          <option className="detection__uploadDetectUpload" value="otherOption">model 1</option>
-          <option className="detection__uploadDetectUpload" value="otherOption">model 1</option>
-        </select>
+        <Box sx={{ minWidth: 120,borderRadius: '4px',border: 'none',marginTop:'10px' }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">MODEL</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Model"
+              onChange={handleChange}
+            >
+              <MenuItem value={10} className="select_item">model 1</MenuItem>
+              <MenuItem value={20} className="select_item">model 2</MenuItem>
+              <MenuItem value={30}>model 3</MenuItem>
+              <MenuItem value={40}>model 4</MenuItem>
+              <MenuItem value={50}>model 5</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        {/* <Select className="detection__select">
+          <option className="detection__selectModel" value="someOption">MODEL 1</option>
+          <option className="detection__selectModel" value="otherOption">model 1</option>
+          <option className="detection__selectModel" value="otherOption">model 1</option>
+          <option className="detection__selectModel" value="otherOption">model 1</option>
+          <option className="detection__selectModel" value="otherOption">model 1</option>
+        </Select> */}
         <Button className="detection__uploadDetectUpload">
           <label for="imageUpload">UPLOAD</label>
           <PublishIcon
@@ -118,7 +121,7 @@ function Detection() {
               : "detection__resultNegative"
           }
         >
-          <p> Result: {result}</p>
+          <p> {t('Result:')} {result} |{t('Percentage:')} 100% </p>
         </div>
       )}
     </div>
