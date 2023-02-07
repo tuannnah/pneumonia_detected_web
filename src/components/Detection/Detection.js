@@ -32,7 +32,7 @@ function Detection() {
     let reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
-      const URL__ENDPOINT = "http://localhost:5000/predict";
+      const URL__ENDPOINT = "http://localhost:5000/predict1";
       console.log(files[0]);
       const formData = new FormData();
       formData.append("file", files[0], files[0].name);
