@@ -1,12 +1,18 @@
-.header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: rgb(7, 0, 70);
-	border-bottom: 2px rgba(0, 17, 255, 0.815) solid;
+.header-container {
+  background-color: rgb(7, 0, 70);
+  border-bottom: 2px rgba(0, 17, 255, 0.815) solid;
+  padding: 20px;
 }
+
+.header {
+  max-width: 1080px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
 .header > h1 {
-	margin: 20px;
-	font-size: 35px;
-	color: white;
+  font-size: 35px;
+  color: white;
 }

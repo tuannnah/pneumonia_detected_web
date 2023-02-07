@@ -1,20 +1,22 @@
 .app__about {
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 1080px;
+  margin: auto;
+  padding: 20px;
 }
 
 .app__body {
-	margin-top: 70px;
+  margin-top: 70px;
 }
 .app__aboutImages {
-	display: flex;
-	flex-direction: column;
-	height: 700px;
-	justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  justify-content: space-evenly;
 }
 .app__about > div > img {
-	object-fit: contain;
-	height: 200px;
+  object-fit: contain;
+  height: 200px;
 }
